@@ -1,0 +1,70 @@
+.method-explanation {
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
+/* -----------------------------------FORM -----------------------------------*/
+.closed-methods-form-holder {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #f3f4fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #0d3b47;
+}
+.closed-methods-form {
+  width: 100%;
+}
+
+.form-body {
+  display: flex;
+  justify-content: space-around;
+  height: 200px;
+}
+
+.labels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #0d3b47;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.input {
+  width: 120px;
+}
+.form-button {
+  margin: 10px;
+  padding: 4px 8px 4px 8px;
+  border-radius: 15px;
+}
+/* -----------------------------------SOLUTIONS-----------------------------------*/
+.solutions-holder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.method {
+  margin: 5px;
+  background-color: wheat;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+/* -----------------------------------GRAPH ---------------------------------------*/
+.function-plot {
+  margin: auto;
+  width: 100%;
+}
+.graph-holder {
+  width: 90%;
+  height: 0%;
+}

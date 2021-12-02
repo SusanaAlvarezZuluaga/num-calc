@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Routes, Route } from 'react-router-dom';
+import Home from './components/Home/';
+import SolveEquation from './components/SolveEquations/';
+import SolveSystemOfEquations from './components/SolveSystemOfEquations/';
+import ClosedMethods from './components/SolveEquations/ClosedMethods';
+import OpenMethods from './components/SolveEquations/OpenMethods';
+import './styles/general.css';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/solve-equation" element={<SolveEquation />} />
+      <Route
+        path="/solve-system-of-equations"
+        element={<SolveSystemOfEquations />}
+      />
+      <Route
+        path="/solve-equation/closed-methods"
+        element={<ClosedMethods />}
+      />
+      <Route path="/solve-equation/open-methods" element={<OpenMethods />} />
+    </Routes>
   );
 }
 

@@ -1,0 +1,42 @@
+.simple-header {
+  width: 100%;
+  margin: 0px 0px 10px 0px;
+  height: 120px;
+  background-color: #f7c0b2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0d3b47;
+  font-size: 24px;
+  font-weight: 400;
+}
+.name-holder {
+  font-size: 24px;
+  color: #0d3b47;
+  font-weight: 300;
+}
+.solve-equations-type-methods-holder {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.solve-equations-type-method {
+  width: 100%;
+  max-width: 350px;
+  margin: 15px 10px 15px 10px;
+  padding: 5px;
+  height: 250px;
+  border-radius: 15px;
+  color: #0d3b47;
+  font-size: 18px;
+}
+.method-op1 {
+  background-color: #ced7ff;
+}
+.method-op2 {
+  background-color: #b5f1ff;
+}
