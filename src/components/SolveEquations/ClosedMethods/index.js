@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import UserInputs from './UserInputs';
 import Solutions from './Solutions';
-import './closed-methods.css';
-import BisectionMethod from '../../../algorithms/BisectionMethod';
-import FalsePositionnMethod from '../../../algorithms/FalsePositionMethod';
 
 function ClosedMethods() {
   /* INPUTS STATES */

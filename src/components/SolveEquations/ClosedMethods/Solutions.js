@@ -27,15 +27,17 @@ function Solution(props) {
 
   return (
     <div>
-      <div>Solutions</div>
+      <div className="solutions-title">Solutions</div>
       <div className="solutions-holder">
         <div className="method">
           <div className="method-name">Bisection Method</div>
           <div className="method-answer">Answer: {bisectionMethodAnswer}</div>
         </div>
         <div className="method">
-          <div>False Position</div>
-          <div>Answer:{falsePositionMethodAnswer}</div>
+          <div className="method-name">False Position</div>
+          <div className="method-answer">
+            Answer: {falsePositionMethodAnswer}
+          </div>
         </div>
       </div>
       <Graph

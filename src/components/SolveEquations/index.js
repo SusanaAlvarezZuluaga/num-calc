@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
-import Header from '../Header';
-import logoSmall from '../../assets/logo-small.png';
 import './solve-equations.css';
 function SolveEquation() {
   return (
-    <div>
+    <div className="solve-equations-page">
       <div className="simple-header">Solve One Variable Equations</div>
       <div className="intro">Choose what kinds of method you want to use</div>
       <div className="solve-equations-type-methods-holder">

@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import Graph from '../../Graph';
 function UserInputs(props) {
   const {
     equation,
@@ -17,6 +15,7 @@ function UserInputs(props) {
 
   return (
     <div>
+      <div className="form-title">Problem Info</div>
       <form
         className="closed-methods-form"
         id="closed-methods-form"

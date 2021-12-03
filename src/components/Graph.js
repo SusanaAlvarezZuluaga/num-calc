@@ -1,5 +1,5 @@
 import functionPlot from 'function-plot';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useRef } from 'react';
 function Graph(props) {
   const { equation, limInf, limSup, showSolutionNumClicks } = props;
@@ -9,7 +9,8 @@ function Graph(props) {
     try {
       graph = functionPlot({
         target: rootEl.current,
-        xAxis: { domain: [limInf, limSup] },
+        xAxis: { label: 'x', domain: [limInf, limSup] },
+        yAxis: { label: 'f(x)' },
         grid: true,
         data: [
           {
@@ -24,8 +25,8 @@ function Graph(props) {
 
   return (
     <div>
-      <div>Graph</div>
-      <div ref={rootEl} className="graph-holder" />
+      <div className="graph-title">Graph</div>
+      <div ref={rootEl} className="graph-holder" style={{ width: '90%' }} />
     </div>
   );
 }

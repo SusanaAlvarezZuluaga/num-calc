@@ -4,7 +4,6 @@ import solveEquations from '../../assets/solve-equations.jpg';
 import systemsOfEquations from '../../assets/systems-of-equations.png';
 import intergrals from '../../assets/integrals.jpg';
 import differentialEquation from '../../assets/differential-equations.jpg';
-import './home.css';
 import Header from '../Header';
 function Home() {
   return (
