@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { evaluate } from 'mathjs';
 import UserInputs from './UserInputs';
 import Solutions from './Solutions';
 

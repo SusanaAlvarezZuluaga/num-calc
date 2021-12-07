@@ -116,6 +116,7 @@
   justify-content: center;
 }
 .method {
+  flex: 1;
   margin: 5px;
   background-color: #f7c0b2;
   border-radius: 15px;

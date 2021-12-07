@@ -1,3 +1,5 @@
+import { evaluate } from 'mathjs';
+import { useEffect, useState, useRef } from 'react';
 function UserInputs(props) {
   const {
     equation,
@@ -12,7 +14,34 @@ function UserInputs(props) {
     setTolerance,
     handleSubmit,
   } = props;
+  const inputFunction = useRef(null);
 
+  function validateEquation() {
+    try {
+      const xi = parseFloat(limInf);
+      const xs = parseFloat(limSup);
+      const yi = evaluate(equation, { x: xi });
+      const ys = evaluate(equation, { x: xs });
+      if (yi * ys <= 0) {
+        //setMessageEquation('');
+        inputFunction.current.setCustomValidity('');
+      } else {
+        console.log('invalid ');
+        inputFunction.current.setCustomValidity(
+          'Please enter a valid interval. Remember f(limInf)*f(limSup)<0'
+        );
+      }
+    } catch {
+      inputFunction.current.setCustomValidity(
+        'Invalid function. Remember to write your function in terms of the variable x'
+      );
+    }
+  }
+  useEffect(() => {
+    if (inputFunction) {
+      validateEquation();
+    }
+  }, [equation, limInf, limSup]);
   return (
     <div>
       <div className="form-title">Problem Info</div>
@@ -33,12 +62,15 @@ function UserInputs(props) {
           <div className="inputs">
             <div>
               <input
+                ref={inputFunction}
                 className="input"
                 type="text"
                 id="equation"
                 required
                 value={equation}
-                onChange={(e) => setEquation(e.target.value)}
+                onChange={(e) => {
+                  setEquation(e.target.value);
+                }}
               ></input>
             </div>
 
@@ -51,9 +83,18 @@ function UserInputs(props) {
                 min="0"
                 required
                 value={numIterations}
-                onChange={(e) => setNumIterations(e.target.value)}
+                onChange={(e) => {
+                  setNumIterations(e.target.value);
+                  if (
+                    !Number.isInteger(parseFloat(e.target.value)) ||
+                    parseFloat(e.target.value) <= 0
+                  ) {
+                    e.target.setCustomValidity('Must be a positive integer');
+                  } else {
+                    e.target.setCustomValidity('');
+                  }
+                }}
               ></input>
-              <span className="validity"></span>
             </div>
 
             {/* Xinferior */}
@@ -63,9 +104,17 @@ function UserInputs(props) {
                 type="number"
                 required
                 value={limInf}
-                onChange={(e) => setLimInf(e.target.value)}
+                onChange={(e) => {
+                  setLimInf(e.target.value);
+                  if (parseFloat(e.target.value) >= parseFloat(limSup)) {
+                    e.target.setCustomValidity(
+                      'Must be smaller than superior limit'
+                    );
+                  } else {
+                    e.target.setCustomValidity('');
+                  }
+                }}
               ></input>
-              <span className="validity"></span>
             </div>
 
             {/* X superior */}
@@ -75,10 +124,17 @@ function UserInputs(props) {
                 type="number"
                 required
                 value={limSup}
-                min={limInf}
-                onChange={(e) => setLimSup(e.target.value)}
+                onChange={(e) => {
+                  setLimSup(e.target.value);
+                  if (parseFloat(e.target.value) <= parseFloat(limInf)) {
+                    e.target.setCustomValidity(
+                      'Must be bigger than inferior limit'
+                    );
+                  } else {
+                    e.target.setCustomValidity('');
+                  }
+                }}
               ></input>
-              <span className="validity"></span>
             </div>
 
             {/* tolerance*/}
@@ -88,9 +144,15 @@ function UserInputs(props) {
                 type="number"
                 required
                 value={tolerance}
-                onChange={(e) => setTolerance(e.target.value)}
+                onChange={(e) => {
+                  setTolerance(e.target.value);
+                  if (parseFloat(e.target.value) <= 0) {
+                    e.target.setCustomValidity('Must be a positive number');
+                  } else {
+                    e.target.setCustomValidity('');
+                  }
+                }}
               ></input>
-              <span className="validity"></span>
             </div>
           </div>
         </div>

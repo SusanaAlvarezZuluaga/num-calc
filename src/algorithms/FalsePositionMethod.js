@@ -4,14 +4,8 @@ function FalsePositionnMethod(fun, xi, xs, n, tol) {
   xs = parseFloat(xs);
   n = parseFloat(n);
   tol = parseFloat(tol);
-  let yi;
-  let ys;
-  try {
-    yi = evaluate(fun, { x: xi });
-    ys = evaluate(fun, { x: xs });
-  } catch {
-    return `Invalid Function`;
-  }
+  let yi = evaluate(fun, { x: xi });
+  let ys = evaluate(fun, { x: xs });
   let cont = 0;
   if (yi === 0) {
     return `The root is ${xi}`;
@@ -44,7 +38,7 @@ function FalsePositionnMethod(fun, xi, xs, n, tol) {
       return `The method failed to converge in ${n} iterations. Try with a bigger number of iterations`;
     }
   } else {
-    return `The interval provided is not adequate`;
+    return `Error!`;
   }
 }
 export default FalsePositionnMethod;
