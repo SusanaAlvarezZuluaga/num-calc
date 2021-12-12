@@ -4,6 +4,9 @@ import SolveEquation from './components/SolveEquations/';
 import SolveSystemOfEquations from './components/SolveSystemOfEquations/';
 import ClosedMethods from './components/SolveEquations/ClosedMethods';
 import OpenMethods from './components/SolveEquations/OpenMethods';
+import Interpolation from './components/interpolation';
+import IterativeMethods from './components/SolveSystemOfEquations/iterativeMethods';
+import FactorizationMethods from './components/SolveSystemOfEquations/factorizationMethods';
 import './styles/general.css';
 function App() {
   return (
@@ -15,10 +18,19 @@ function App() {
         element={<SolveSystemOfEquations />}
       />
       <Route
+        path="/solve-system-of-equations-iterative-methods"
+        element={<IterativeMethods />}
+      />
+      <Route
+        path="/solve-system-of-equations-factorization-methods"
+        element={<FactorizationMethods />}
+      />
+      <Route
         path="/solve-equation/closed-methods"
         element={<ClosedMethods />}
       />
       <Route path="/solve-equation/open-methods" element={<OpenMethods />} />
+      <Route path="/interpolation" element={<Interpolation />} />
     </Routes>
   );
 }

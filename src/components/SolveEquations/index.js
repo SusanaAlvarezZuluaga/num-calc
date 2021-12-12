@@ -34,9 +34,7 @@ function SolveEquation() {
               guarantee convergence however, when they converge they are much
               faster than closed methods.The available methods are:
               <ul>
-                <li>Fixed point Method</li>
                 <li>Newton's Method</li>
-                <li>Secant Method</li>
                 <li>Multiple Roots Method</li>
               </ul>
             </p>

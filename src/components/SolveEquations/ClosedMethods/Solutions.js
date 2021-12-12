@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import Graph from '../../Graph';
-import BisectionMethod from '../../../algorithms/BisectionMethod';
-import FalsePositionnMethod from '../../../algorithms/FalsePositionMethod';
+import BisectionMethod from '../../../algorithms/solveEquations/BisectionMethod';
+import FalsePositionMethod from '../../../algorithms/solveEquations/FalsePositionMethod';
 
 function Solution(props) {
   const {
@@ -21,12 +21,12 @@ function Solution(props) {
       BisectionMethod(equation, limInf, limSup, numIterations, tolerance)
     );
     setFalsePositionMethodAnswer(
-      FalsePositionnMethod(equation, limInf, limSup, numIterations, tolerance)
+      FalsePositionMethod(equation, limInf, limSup, numIterations, tolerance)
     );
   }, [showSolutionNumClicks]);
 
   return (
-    <div>
+    <div className="solutions-section">
       <div className="solutions-title">Solutions</div>
       <div className="solutions-holder">
         <div className="method">

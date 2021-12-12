@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import solveEquations from '../../assets/solve-equations.jpg';
 import systemsOfEquations from '../../assets/systems-of-equations.png';
-import intergrals from '../../assets/integrals.jpg';
+import interpolation from '../../assets/interpolation.png';
 import differentialEquation from '../../assets/differential-equations.jpg';
 import Header from '../Header';
 function Home() {
@@ -30,9 +30,9 @@ function Home() {
           </div>
 
           <div className="option op3">
-            <Link to="/solve-integral" style={{ textDecoration: 'none' }}>
-              <img className="img-option" src={intergrals} />
-              <div className="title-option">Solve integral</div>
+            <Link to="/interpolation" style={{ textDecoration: 'none' }}>
+              <img className="img-option" src={interpolation} />
+              <div className="title-option">Interpolation</div>
             </Link>
           </div>
 

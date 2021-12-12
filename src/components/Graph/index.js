@@ -2,7 +2,8 @@ import functionPlot from 'function-plot';
 import { useEffect } from 'react';
 import { useRef } from 'react';
 function Graph(props) {
-  const { equation, limInf, limSup, showSolutionNumClicks } = props;
+  let { equation, limInf, limSup, showSolutionNumClicks } = props;
+
   const rootEl = useRef(null);
   let graph;
   useEffect(() => {

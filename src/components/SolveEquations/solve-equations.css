@@ -49,6 +49,7 @@
 .method-explanation {
   margin-left: 5%;
   margin-right: 5%;
+  text-align: center;
 }
 
 /* -----------------------------------FORM -----------------------------------*/
@@ -106,6 +107,10 @@
   box-shadow: none;
 }
 /* -----------------------------------SOLUTIONS-----------------------------------*/
+.solutions-section {
+  width: 100%;
+  max-width: 500px;
+}
 .solutions-title {
   padding: 10px;
   text-align: center;
@@ -114,9 +119,11 @@
 .solutions-holder {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 .method {
   flex: 1;
+  max-width: 225px;
   margin: 5px;
   background-color: #f7c0b2;
   border-radius: 15px;
@@ -133,6 +140,7 @@
   margin-bottom: 10px;
   padding: 5px;
   text-align: center;
+  word-wrap: break-word;
 }
 /* -----------------------------------GRAPH ---------------------------------------*/
 .graph-title {
