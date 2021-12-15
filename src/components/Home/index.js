@@ -35,16 +35,6 @@ function Home() {
               <div className="title-option">Interpolation</div>
             </Link>
           </div>
-
-          <div className="option op4">
-            <Link
-              to="/solve-differential-equation"
-              style={{ textDecoration: 'none' }}
-            >
-              <img className="img-option" src={differentialEquation} />
-              <div className="title-option">Solve differential equation</div>
-            </Link>
-          </div>
         </div>
       </div>
     </div>

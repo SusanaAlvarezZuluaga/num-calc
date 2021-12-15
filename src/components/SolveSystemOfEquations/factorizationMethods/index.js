@@ -3,16 +3,14 @@ import UserInputs from './UserInputs';
 import Solutions from './Solutions';
 function FactorizationMethods() {
   /* INPUTS STATES */
-  const [x, setX] = useState('');
-  const [y, setY] = useState('');
+  const [Ab, setAb] = useState('');
   const [showSolutionNumClicks, setShowSolutionNumClicks] = useState(0);
   function handleSubmit(e) {
     e.preventDefault();
     setShowSolutionNumClicks(showSolutionNumClicks + 1);
   }
   function handleClear() {
-    setX('');
-    setY('');
+    setAb('');
   }
   return (
     <div>
@@ -21,10 +19,8 @@ function FactorizationMethods() {
       <div className="closed-methods-form-holder">
         <UserInputs
           showSolutionNumClicks={showSolutionNumClicks}
-          x={x}
-          setX={setX}
-          y={y}
-          setY={setY}
+          Ab={Ab}
+          setAb={setAb}
           handleSubmit={handleSubmit}
         />
         <div>
@@ -40,14 +36,7 @@ function FactorizationMethods() {
           </button>
         </div>
         {showSolutionNumClicks != 0 ? (
-          <div>
-            <div></div>
-            <Solutions
-              showSolutionNumClicks={showSolutionNumClicks}
-              x={x}
-              y={y}
-            />
-          </div>
+          <Solutions showSolutionNumClicks={showSolutionNumClicks} Ab={Ab} />
         ) : null}
       </div>
     </div>

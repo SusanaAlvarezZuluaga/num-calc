@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import CholeskyMethod from '../../../algorithms/systemOfEquations/CholeskyMethod';
-import DoolittleMethod from '../../../algorithms/systemOfEquations/DoolittleMethod';
+import CholeskyMethod from '../../algorithms/systemOfEquations/CholeskyMethod';
+import DoolittleMethod from '../../algorithms/systemOfEquations/DoolittleMethod';
 function Solution(props) {
   let { showSolutionNumClicks, Ab } = props;
   const [CholeskyMethodAnswer, setCholeskyMethodAnswer] = useState('');

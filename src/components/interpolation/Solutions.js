@@ -16,7 +16,6 @@ function Solution(props) {
   y = y.map((element) => parseFloat(element));
 
   useEffect(() => {
-    //parseInput();
     setNewtonPolynomial(NewtonPolynomialMethod(x, y));
     setLagrangePolynomial(LagrangeMethod(x, y));
   }, [showSolutionNumClicks]);

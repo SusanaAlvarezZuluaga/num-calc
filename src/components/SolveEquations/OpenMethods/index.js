@@ -57,16 +57,13 @@ function OpenMethods() {
           </button>
         </div>
         {showSolutionNumClicks != 0 ? (
-          <div>
-            <div></div>
-            <Solutions
-              showSolutionNumClicks={showSolutionNumClicks}
-              equation={equation}
-              x0={x0}
-              numIterations={numIterations}
-              tolerance={tolerance}
-            />
-          </div>
+          <Solutions
+            showSolutionNumClicks={showSolutionNumClicks}
+            equation={equation}
+            x0={x0}
+            numIterations={numIterations}
+            tolerance={tolerance}
+          />
         ) : null}
       </div>
     </div>

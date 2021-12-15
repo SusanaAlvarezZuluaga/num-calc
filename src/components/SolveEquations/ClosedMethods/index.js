@@ -61,17 +61,14 @@ function ClosedMethods() {
           </button>
         </div>
         {showSolutionNumClicks != 0 ? (
-          <div>
-            <div></div>
-            <Solutions
-              showSolutionNumClicks={showSolutionNumClicks}
-              equation={equation}
-              limInf={limInf}
-              limSup={limSup}
-              numIterations={numIterations}
-              tolerance={tolerance}
-            />
-          </div>
+          <Solutions
+            showSolutionNumClicks={showSolutionNumClicks}
+            equation={equation}
+            limInf={limInf}
+            limSup={limSup}
+            numIterations={numIterations}
+            tolerance={tolerance}
+          />
         ) : null}
       </div>
     </div>

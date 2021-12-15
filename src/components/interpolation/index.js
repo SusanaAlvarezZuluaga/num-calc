@@ -42,14 +42,11 @@ function Interpolation() {
           </button>
         </div>
         {showSolutionNumClicks != 0 ? (
-          <div>
-            <div></div>
-            <Solutions
-              showSolutionNumClicks={showSolutionNumClicks}
-              x={x}
-              y={y}
-            />
-          </div>
+          <Solutions
+            showSolutionNumClicks={showSolutionNumClicks}
+            x={x}
+            y={y}
+          />
         ) : null}
       </div>
     </div>

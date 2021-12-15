@@ -1,44 +1,45 @@
-import { Link } from 'react-router-dom';
-function SolveSystemsOfEquations() {
+import { useState } from 'react';
+import UserInputs from './UserInputs';
+import Solutions from './Solutions';
+function FactorizationMethods() {
+  /* INPUTS STATES */
+  const [Ab, setAb] = useState('');
+  const [showSolutionNumClicks, setShowSolutionNumClicks] = useState(0);
+  function handleSubmit(e) {
+    e.preventDefault();
+    setShowSolutionNumClicks(showSolutionNumClicks + 1);
+  }
+  function handleClear() {
+    setAb('');
+  }
   return (
-    <div className="solve-equations-page">
-      <div className="simple-header">Solve Systems of Equations</div>
-      <div className="intro">Choose what kinds of method you want to use</div>
-      <div className="solve-equations-type-methods-holder">
-        <Link
-          to="/solve-system-of-equations-factorization-methods"
-          style={{ textDecoration: 'none' }}
-        >
-          <div className="solve-equations-type-method op3">
-            <div> Factorization methods</div>
-            <p>
-              Methods that would be precise if it weren't for propagation
-              errors. The available methods are:
-              <ul>
-                <li> Doolittle Method </li>
-                <li> Simple Gaussian Method </li>
-              </ul>
-            </p>
-          </div>
-        </Link>
-        <Link
-          to="/solve-system-of-equations-iterative-methods"
-          style={{ textDecoration: 'none' }}
-        >
-          <div className="solve-equations-type-method  op4">
-            <div>Iterative methods</div>
-            <p>
-              Methods that in order to work, they require an initial values for
-              all the variables.The available methods are:
-              <ul>
-                <li>Relaxed Jacobi Method</li>
-                <li>Relaxed Gauss Seidel Method</li>
-              </ul>
-            </p>
-          </div>
-        </Link>
+    <div>
+      <div className="simple-header">Factorization Methods</div>
+      <div className="method-explanation">bla bla bla.</div>
+      <div className="closed-methods-form-holder">
+        <UserInputs
+          showSolutionNumClicks={showSolutionNumClicks}
+          Ab={Ab}
+          setAb={setAb}
+          handleSubmit={handleSubmit}
+        />
+        <div>
+          <button
+            type="submit"
+            form="closed-methods-form"
+            className="form-button"
+          >
+            find solution
+          </button>
+          <button className="form-button" onClick={handleClear}>
+            clear
+          </button>
+        </div>
+        {showSolutionNumClicks != 0 ? (
+          <Solutions showSolutionNumClicks={showSolutionNumClicks} Ab={Ab} />
+        ) : null}
       </div>
     </div>
   );
 }
-export default SolveSystemsOfEquations;
+export default FactorizationMethods;
