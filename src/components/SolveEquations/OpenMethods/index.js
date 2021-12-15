@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import UserInputs from './UserInputs';
 import Solutions from './Solutions';
 
@@ -23,7 +24,16 @@ function OpenMethods() {
   }
   return (
     <div>
-      <div className="simple-header">Open Methods</div>
+      <div className="simple-header">
+        <Link
+          className="arrow-back-holder"
+          to="/solve-equation"
+          style={{ textDecoration: 'none' }}
+        >
+          <span className="material-icons arrow-back">arrow_back</span>
+        </Link>
+        <div>Open Methods</div>
+      </div>
       <div className="method-explanation">
         Open methods are methods that in order to work, they require a very good
         intial value. Usually a good initial value the graphical method is used.
@@ -56,7 +66,7 @@ function OpenMethods() {
             clear
           </button>
         </div>
-        {showSolutionNumClicks != 0 ? (
+        {showSolutionNumClicks !== 0 ? (
           <Solutions
             showSolutionNumClicks={showSolutionNumClicks}
             equation={equation}

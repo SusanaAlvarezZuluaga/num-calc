@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import UserInputs from './UserInputs';
 import Solutions from './Solutions';
-function FactorizationMethods() {
+function SolveSystemsOfEquations() {
   /* INPUTS STATES */
   const [Ab, setAb] = useState('');
   const [showSolutionNumClicks, setShowSolutionNumClicks] = useState(0);
@@ -11,10 +12,20 @@ function FactorizationMethods() {
   }
   function handleClear() {
     setAb('');
+    setShowSolutionNumClicks(0);
   }
   return (
     <div>
-      <div className="simple-header">Factorization Methods</div>
+      <div className="simple-header">
+        <Link
+          className="arrow-back-holder"
+          to="/"
+          style={{ textDecoration: 'none' }}
+        >
+          <span className="material-icons arrow-back">arrow_back</span>
+        </Link>
+        <div>Solve systems of linear equations</div>
+      </div>
       <div className="method-explanation">bla bla bla.</div>
       <div className="closed-methods-form-holder">
         <UserInputs
@@ -35,11 +46,11 @@ function FactorizationMethods() {
             clear
           </button>
         </div>
-        {showSolutionNumClicks != 0 ? (
+        {showSolutionNumClicks !== 0 ? (
           <Solutions showSolutionNumClicks={showSolutionNumClicks} Ab={Ab} />
         ) : null}
       </div>
     </div>
   );
 }
-export default FactorizationMethods;
+export default SolveSystemsOfEquations;

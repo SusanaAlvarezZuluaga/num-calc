@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import solveEquations from '../../assets/solve-equations.jpg';
 import systemsOfEquations from '../../assets/systems-of-equations.png';
 import interpolation from '../../assets/interpolation.png';
-import differentialEquation from '../../assets/differential-equations.jpg';
 import Header from '../Header';
 function Home() {
   return (
@@ -14,7 +13,11 @@ function Home() {
         <div className="options-holder">
           <div className="option op1">
             <Link to="/solve-equation" style={{ textDecoration: 'none' }}>
-              <img className="img-option" src={solveEquations}></img>
+              <img
+                className="img-option"
+                src={solveEquations}
+                alt="solve equations"
+              ></img>
               <div className="title-option"> Solve Equations</div>
             </Link>
           </div>
@@ -24,14 +27,22 @@ function Home() {
               to="/solve-system-of-equations"
               style={{ textDecoration: 'none' }}
             >
-              <img className="img-option" src={systemsOfEquations} />
+              <img
+                className="img-option"
+                src={systemsOfEquations}
+                alt="solve systems of equations"
+              />
               <div className="title-option">Solve system of equations</div>
             </Link>
           </div>
 
           <div className="option op3">
             <Link to="/interpolation" style={{ textDecoration: 'none' }}>
-              <img className="img-option" src={interpolation} />
+              <img
+                className="img-option"
+                src={interpolation}
+                alt="interpolation"
+              />
               <div className="title-option">Interpolation</div>
             </Link>
           </div>

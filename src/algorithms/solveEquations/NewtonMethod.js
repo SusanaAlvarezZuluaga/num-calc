@@ -16,7 +16,7 @@ function NewtonMethod(fun, x0, n, tol) {
     y0 = y1;
     cont = cont + 1;
   }
-  if (y0 == 0) {
+  if (y0 === 0) {
     return `The root is ${x0}`;
   } else if (error < tol) {
     return `An approximation of the root is ${x0} with an error of ${error}`;

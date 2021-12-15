@@ -30,7 +30,7 @@ function FalsePositionnMethod(fun, xi, xs, n, tol) {
       E = Math.abs(xm - xmanterior);
       cont = cont + 1;
     }
-    if (ym == 0) {
+    if (ym === 0) {
       return `The root is ${xm}`;
     } else if (E < tol) {
       return `An approximation of the root is ${xm} with an error of ${E}`;

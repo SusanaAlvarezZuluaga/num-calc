@@ -1,12 +1,37 @@
+import { matrix } from 'mathjs';
 import { useRef, useEffect } from 'react';
 function UserInputs(props) {
   let { Ab, setAb, handleSubmit } = props;
   const inputAb = useRef(null);
 
-  function validateInputs() {}
+  function validateInputs() {
+    try {
+      Ab = Ab.slice(2, Ab.length - 2);
+      Ab = Ab.split('],[');
+      Ab = Ab.map((element) => element.split(','));
+      Ab = Ab.map((row) => row.map((element) => parseFloat(element)));
+      Ab = matrix(Ab);
+      const [numF, numC] = Ab._size;
+      if (numF + 1 !== numC) {
+        return 'Enter a matrix of correct dimensions';
+      } else {
+        for (let i = 0; i < numF; i++) {
+          for (let j = 0; j < numC; j++) {
+            if (Number.isNaN(Ab._data[i][j])) {
+              return 'Enter only numbers inside the matrix';
+            }
+          }
+        }
+        return '';
+      }
+    } catch {
+      return 'Enter a valid matrix';
+    }
+  }
 
   useEffect(() => {
-    validateInputs();
+    inputAb.current.setCustomValidity(validateInputs());
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Ab]);
   return (
     <div>

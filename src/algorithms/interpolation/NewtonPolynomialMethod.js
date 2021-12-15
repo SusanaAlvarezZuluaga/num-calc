@@ -31,7 +31,6 @@ function NewtonPolynomialMethod(X, Y) {
         }
         Xt = `${Xt}*(x${sign2}${Xx[i]})`;
       }
-      let d = dif._data[0][j];
       P = `${P}${sign}${dif._data[0][j]}${Xt}`;
     }
     P = simplify(P).toString();

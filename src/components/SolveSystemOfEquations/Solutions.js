@@ -17,6 +17,7 @@ function Solution(props) {
     parseInput();
     setCholeskyMethodAnswer(CholeskyMethod(Ab));
     setDoolittleMethodAnswer(DoolittleMethod(Ab));
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showSolutionNumClicks]);
 
   return (

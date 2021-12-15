@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import UserInputs from './UserInputs';
 import Solutions from './Solutions';
 function Interpolation() {
@@ -13,10 +14,20 @@ function Interpolation() {
   function handleClear() {
     setX('');
     setY('');
+    setShowSolutionNumClicks(0);
   }
   return (
     <div>
-      <div className="simple-header">Interpolation</div>
+      <div className="simple-header">
+        <Link
+          className="arrow-back-holder"
+          to="/"
+          style={{ textDecoration: 'none' }}
+        >
+          <span className="material-icons arrow-back">arrow_back</span>
+        </Link>
+        <div>Interpolation</div>
+      </div>
       <div className="method-explanation">
         Interpolation is used to fit some data points to a known curve.
       </div>
@@ -41,7 +52,7 @@ function Interpolation() {
             clear
           </button>
         </div>
-        {showSolutionNumClicks != 0 ? (
+        {showSolutionNumClicks !== 0 ? (
           <Solutions
             showSolutionNumClicks={showSolutionNumClicks}
             x={x}

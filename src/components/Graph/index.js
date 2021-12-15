@@ -5,10 +5,10 @@ function Graph(props) {
   let { equation, limInf, limSup, showSolutionNumClicks } = props;
 
   const rootEl = useRef(null);
-  let graph;
+
   useEffect(() => {
     try {
-      graph = functionPlot({
+      functionPlot({
         target: rootEl.current,
         xAxis: { label: 'x', domain: [limInf, limSup] },
         yAxis: { label: 'f(x)' },
@@ -19,9 +19,8 @@ function Graph(props) {
           },
         ],
       });
-    } catch {
-      graph = null;
-    }
+    } catch {}
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showSolutionNumClicks]);
 
   return (

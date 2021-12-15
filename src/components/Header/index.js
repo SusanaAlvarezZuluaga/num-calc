@@ -4,10 +4,10 @@ function Header() {
   return (
     <div className="header">
       <div className="logo-holder">
-        <img src={logo} className="logo" />
+        <img src={logo} className="logo" alt="logo" />
       </div>
       <div className="name-holder">
-        <img src={name} className="name" />
+        <img src={name} className="name" alt="name" />
       </div>
     </div>
   );

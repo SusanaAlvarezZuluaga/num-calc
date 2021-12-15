@@ -17,7 +17,7 @@ function UserInputs(props) {
   function validateEquation() {
     try {
       const xi = parseFloat(x0);
-      const yi = evaluate(equation, { x: xi });
+      evaluate(equation, { x: xi });
       inputFunction.current.setCustomValidity('');
     } catch {
       inputFunction.current.setCustomValidity(
@@ -29,6 +29,7 @@ function UserInputs(props) {
     if (inputFunction) {
       validateEquation();
     }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [equation, x0]);
   return (
     <div>

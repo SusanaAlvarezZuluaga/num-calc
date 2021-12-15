@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import UserInputs from './UserInputs';
 import Solutions from './Solutions';
 
@@ -25,7 +26,16 @@ function ClosedMethods() {
   }
   return (
     <div>
-      <div className="simple-header">Closed Methods</div>
+      <div className="simple-header">
+        <Link
+          className="arrow-back-holder"
+          to="/solve-equation"
+          style={{ textDecoration: 'none' }}
+        >
+          <span className="material-icons arrow-back">arrow_back</span>
+        </Link>
+        <div>Closed Methods</div>
+      </div>
       <div className="method-explanation">
         Closed methods are methods that in order to work, they require an
         interval, inside of which there is a root. Usually to find an interval
@@ -60,7 +70,7 @@ function ClosedMethods() {
             clear
           </button>
         </div>
-        {showSolutionNumClicks != 0 ? (
+        {showSolutionNumClicks !== 0 ? (
           <Solutions
             showSolutionNumClicks={showSolutionNumClicks}
             equation={equation}

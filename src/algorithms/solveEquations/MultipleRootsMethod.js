@@ -10,7 +10,6 @@ function MultipleRootsMethod(fun, x0, n, tol) {
     let cont = 1;
     let fun_1 = derivative(fun, 'x').toString();
     let fun_2 = derivative(fun_1, 'x').toString();
-    let gfun = `(${fun}* ${fun_1}) / (${fun_1} * ${fun_1} - ${fun} * ${fun_2})`;
     let err = tol + 1;
     let yn = y0;
     while (yn !== 0 && err > tol && cont < n) {
@@ -23,7 +22,7 @@ function MultipleRootsMethod(fun, x0, n, tol) {
       x0 = xn;
       cont = cont + 1;
     }
-    if (yn == 0) {
+    if (yn === 0) {
       return `The root is ${x0}`;
     } else if (err < tol) {
       return `An approximation of the root is ${x0} with an error of ${err}`;

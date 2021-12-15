@@ -23,6 +23,7 @@ function Solution(props) {
     setFalsePositionMethodAnswer(
       FalsePositionMethod(equation, limInf, limSup, numIterations, tolerance)
     );
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showSolutionNumClicks]);
 
   return (

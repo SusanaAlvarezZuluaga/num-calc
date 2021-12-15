@@ -14,6 +14,7 @@ function Solution(props) {
     setMultipleRootsMethodAnswer(
       MultipleRootsMethod(equation, x0, numIterations, tolerance)
     );
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showSolutionNumClicks]);
 
   return (

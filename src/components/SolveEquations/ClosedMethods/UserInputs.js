@@ -1,5 +1,5 @@
 import { evaluate } from 'mathjs';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 function UserInputs(props) {
   const {
     equation,
@@ -26,7 +26,6 @@ function UserInputs(props) {
         //setMessageEquation('');
         inputFunction.current.setCustomValidity('');
       } else {
-        console.log('invalid ');
         inputFunction.current.setCustomValidity(
           'Please enter a valid interval. Remember f(limInf)*f(limSup)<0'
         );
@@ -41,6 +40,7 @@ function UserInputs(props) {
     if (inputFunction) {
       validateEquation();
     }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [equation, limInf, limSup]);
   return (
     <div>

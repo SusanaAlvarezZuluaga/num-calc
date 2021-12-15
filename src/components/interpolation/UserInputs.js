@@ -1,17 +1,38 @@
-import { e } from 'mathjs/lib/cjs/entry/pureFunctionsAny.generated';
 import { useRef, useEffect } from 'react';
 function UserInputs(props) {
-  let { x, setX, y, setY, handleSubmit, showSolutionNumClicks } = props;
+  let { x, setX, y, setY, handleSubmit } = props;
   const inputX = useRef(null);
   const inputY = useRef(null);
 
   function validateInputs() {
     try {
-      const xArr = x.split(',');
-      const yArr = y.split(',');
+      //parse x array
+      let xArr = x.slice(1, x.length - 1);
+      xArr = xArr.split(',');
+      xArr = xArr.map((element) => parseFloat(element));
+      //parse y array
+      let yArr = y.slice(1, y.length - 1);
+      yArr = yArr.split(',');
+      yArr = yArr.map((element) => parseFloat(element));
+
       if (xArr.length === yArr.length) {
-        inputY.current.setCustomValidity('');
-        inputX.current.setCustomValidity('');
+        //check for only numbers
+        for (let i = 0; i < xArr.length; i++) {
+          if (Number.isNaN(xArr[i])) {
+            inputX.current.setCustomValidity(
+              'Enter only numbers inside the array'
+            );
+          } else {
+            inputX.current.setCustomValidity('');
+          }
+          if (Number.isNaN(yArr[i])) {
+            inputY.current.setCustomValidity(
+              'Enter only numbers inside the array'
+            );
+          } else {
+            inputY.current.setCustomValidity('');
+          }
+        }
       } else {
         inputY.current.setCustomValidity(
           'make sure x and y have the same dimensions'
@@ -28,6 +49,7 @@ function UserInputs(props) {
 
   useEffect(() => {
     validateInputs();
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [x, y]);
   return (
     <div>

@@ -7,6 +7,7 @@ function Solution(props) {
   const [NewtonPolynomial, setNewtonPolynomial] = useState('');
   const [LagrangePolynomial, setLagrangePolynomial] = useState('');
 
+  //parse x array
   x = x.slice(1, y.length - 1);
   x = x.split(',');
   x = x.map((element) => parseFloat(element));
@@ -18,6 +19,7 @@ function Solution(props) {
   useEffect(() => {
     setNewtonPolynomial(NewtonPolynomialMethod(x, y));
     setLagrangePolynomial(LagrangeMethod(x, y));
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showSolutionNumClicks]);
 
   return (

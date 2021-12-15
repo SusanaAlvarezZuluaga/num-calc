@@ -1,10 +1,8 @@
 import { matrix, identity, subtract } from 'mathjs';
 function DoolittleMethod(Ab) {
-  Ab = matrix(Ab);
-  const [numF, numC] = Ab._size;
-  if (numF + 1 != numC) {
-    return 'invalid maxtrix dimensions';
-  } else {
+  try {
+    Ab = matrix(Ab);
+    const [numF, numC] = Ab._size;
     let L = identity(numF);
     let U = identity(numF);
     for (let k = 0; k < numF; k++) {
@@ -36,7 +34,7 @@ function DoolittleMethod(Ab) {
     }
     let detA = detU * detL;
 
-    if (detA != 0) {
+    if (detA !== 0) {
       let z = Array(numF).fill(0);
       z[0] = Ab._data[0][numC - 1] / L._data[0][0];
       for (let i = 0; i < numF; i++) {
@@ -58,6 +56,8 @@ function DoolittleMethod(Ab) {
     } else {
       return 'The problem has no solution or has infinite solutions';
     }
+  } catch {
+    return "Couln't find solution";
   }
 }
 

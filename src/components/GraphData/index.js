@@ -1,5 +1,5 @@
 import React from 'react';
-import { evaluate, format, setUnionDependencies } from 'mathjs';
+import { evaluate } from 'mathjs';
 import {
   Chart as ChartJS,
   LinearScale,
@@ -30,7 +30,6 @@ function GraphData(props) {
   const [data, setData] = useState(null);
   const xmin = Math.min(...x);
   const xmax = Math.max(...x);
-  const step = (xmax - xmin) / 10;
   const options = {
     plugins: {
       legend: {
@@ -73,7 +72,9 @@ function GraphData(props) {
           data: xValues.map((xval) => {
             try {
               return evaluate(NewtonPolynomial, { x: xval });
-            } catch {}
+            } catch {
+              return '';
+            }
           }),
         },
         {
@@ -87,7 +88,9 @@ function GraphData(props) {
           data: xValues.map((xval) => {
             try {
               return evaluate(LagrangePolynomial, { x: xval });
-            } catch {}
+            } catch {
+              return '';
+            }
           }),
         },
         {
@@ -104,16 +107,16 @@ function GraphData(props) {
     });
   }
 
-  useEffect(
-    () => setUpGraph(),
-    [showSolutionNumClicks, NewtonPolynomial, LagrangePolynomial]
-  );
+  useEffect(() => {
+    setUpGraph();
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [showSolutionNumClicks, NewtonPolynomial, LagrangePolynomial]);
 
   return (
     <div>
       {data &&
-      LagrangePolynomial != "Couldn't find solution" &&
-      NewtonPolynomial != "Couldn't find solution" ? (
+      LagrangePolynomial !== "Couldn't find solution" &&
+      NewtonPolynomial !== "Couldn't find solution" ? (
         <div>
           <div className="graph-title">Graph</div>
           <Chart type="bar" data={data} options={options} />
