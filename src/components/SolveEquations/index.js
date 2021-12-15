@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import './solve-equations.css';
 function SolveEquation() {
   return (
     <div className="solve-equations-page">

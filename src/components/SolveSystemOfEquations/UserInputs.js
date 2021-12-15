@@ -1,4 +1,3 @@
-import { e } from 'mathjs/lib/cjs/entry/pureFunctionsAny.generated';
 import { useRef, useEffect } from 'react';
 function UserInputs(props) {
   let { Ab, setAb, handleSubmit } = props;

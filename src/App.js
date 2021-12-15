@@ -5,9 +5,7 @@ import SolveSystemOfEquations from './components/SolveSystemOfEquations/';
 import ClosedMethods from './components/SolveEquations/ClosedMethods';
 import OpenMethods from './components/SolveEquations/OpenMethods';
 import Interpolation from './components/interpolation';
-import IterativeMethods from './components/SolveSystemOfEquations/iterativeMethods';
-import FactorizationMethods from './components/SolveSystemOfEquations/factorizationMethods';
-import './styles/general.css';
+import './index.css';
 function App() {
   return (
     <Routes>
@@ -16,14 +14,6 @@ function App() {
       <Route
         path="/solve-system-of-equations"
         element={<SolveSystemOfEquations />}
-      />
-      <Route
-        path="/solve-system-of-equations-iterative-methods"
-        element={<IterativeMethods />}
-      />
-      <Route
-        path="/solve-system-of-equations-factorization-methods"
-        element={<FactorizationMethods />}
       />
       <Route
         path="/solve-equation/closed-methods"
