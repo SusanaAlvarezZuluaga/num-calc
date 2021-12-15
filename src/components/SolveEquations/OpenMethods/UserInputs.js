@@ -89,11 +89,15 @@ function UserInputs(props) {
             <div>
               <input
                 className="input"
-                type="number"
                 required
                 value={x0}
                 onChange={(e) => {
                   setX0(e.target.value);
+                  if (Number.isNaN(parseFloat(e.target.value))) {
+                    e.target.setCustomValidity('Must be a number');
+                  } else {
+                    e.target.setCustomValidity('');
+                  }
                 }}
               ></input>
             </div>

@@ -23,7 +23,6 @@ function UserInputs(props) {
       const yi = evaluate(equation, { x: xi });
       const ys = evaluate(equation, { x: xs });
       if (yi * ys <= 0) {
-        //setMessageEquation('');
         inputFunction.current.setCustomValidity('');
       } else {
         inputFunction.current.setCustomValidity(
@@ -101,7 +100,6 @@ function UserInputs(props) {
             <div>
               <input
                 className="input"
-                type="number"
                 required
                 value={limInf}
                 onChange={(e) => {
@@ -121,12 +119,13 @@ function UserInputs(props) {
             <div>
               <input
                 className="input"
-                type="number"
                 required
                 value={limSup}
                 onChange={(e) => {
                   setLimSup(e.target.value);
-                  if (parseFloat(e.target.value) <= parseFloat(limInf)) {
+                  if (Number.isNaN(parseFloat(e.target.value))) {
+                    e.target.setCustomValidity('Must be a number');
+                  } else if (parseFloat(e.target.value) <= parseFloat(limInf)) {
                     e.target.setCustomValidity(
                       'Must be bigger than inferior limit'
                     );
@@ -145,7 +144,9 @@ function UserInputs(props) {
                 value={tolerance}
                 onChange={(e) => {
                   setTolerance(e.target.value);
-                  if (parseFloat(e.target.value) > 0) {
+                  if (Number.isNaN(parseFloat(e.target.value))) {
+                    e.target.setCustomValidity('Must be a number');
+                  } else if (parseFloat(e.target.value) > 0) {
                     e.target.setCustomValidity('');
                   } else {
                     e.target.setCustomValidity('Must be a positive number');
