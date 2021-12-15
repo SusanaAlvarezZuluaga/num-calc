@@ -141,15 +141,14 @@ function UserInputs(props) {
             <div>
               <input
                 className="input"
-                type="number"
                 required
                 value={tolerance}
                 onChange={(e) => {
                   setTolerance(e.target.value);
-                  if (parseFloat(e.target.value) <= 0) {
-                    e.target.setCustomValidity('Must be a positive number');
-                  } else {
+                  if (parseFloat(e.target.value) > 0) {
                     e.target.setCustomValidity('');
+                  } else {
+                    e.target.setCustomValidity('Must be a positive number');
                   }
                 }}
               ></input>
