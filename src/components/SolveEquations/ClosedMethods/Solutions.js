@@ -28,7 +28,7 @@ function Solution(props) {
 
   return (
     <div className="solutions-section">
-      <div className="solutions-title">Solutions</div>
+      <div className="section-title">Solutions</div>
       <div className="solutions-holder">
         <div className="method">
           <div className="method-name">Bisection Method</div>

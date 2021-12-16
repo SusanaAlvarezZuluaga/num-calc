@@ -18,7 +18,7 @@ function Home() {
                 src={solveEquations}
                 alt="solve equations"
               ></img>
-              <div className="title-option"> Solve Equations</div>
+              <div className="title-option"> Solve one variable equations</div>
             </Link>
           </div>
 
@@ -32,7 +32,9 @@ function Home() {
                 src={systemsOfEquations}
                 alt="solve systems of equations"
               />
-              <div className="title-option">Solve system of equations</div>
+              <div className="title-option">
+                Solve systems of linear equations
+              </div>
             </Link>
           </div>
 
@@ -43,7 +45,7 @@ function Home() {
                 src={interpolation}
                 alt="interpolation"
               />
-              <div className="title-option">Interpolation</div>
+              <div className="title-option">Polynomial interpolation</div>
             </Link>
           </div>
         </div>

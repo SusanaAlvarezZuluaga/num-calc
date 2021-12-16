@@ -27,7 +27,7 @@ function SolveSystemsOfEquations() {
         <div>Solve systems of linear equations</div>
       </div>
       <div className="method-explanation">bla bla bla.</div>
-      <div className="closed-methods-form-holder">
+      <div className="column-2">
         <UserInputs
           showSolutionNumClicks={showSolutionNumClicks}
           Ab={Ab}

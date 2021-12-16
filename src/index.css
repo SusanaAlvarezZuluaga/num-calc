@@ -75,7 +75,8 @@ body {
   background-color: #b5f1ff;
 }
 
-/* ------------------------------------SOLVE EQUATIONS PAGE  ------------------------------------*/
+/* ------------------------------------OTHER PAGES  ------------------------------------*/
+
 .solve-equations-page {
   width: 100%;
 }
@@ -97,10 +98,43 @@ body {
 .arrow-back {
   color: #0d3b47;
 }
+.page-columns {
+  display: flex;
+  background-color: #f3f4fa;
+  color: #0d3b47;
+  width: 90%;
+  margin: auto;
+}
+.column-1 {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: 5%;
+  max-height: 40%;
+  overflow: auto;
+}
+.requirements {
+  width: 90%;
+}
+.req-title {
+  font-weight: 600;
+}
+.method-conditions {
+  font-size: 14px;
+  max-height: 30vh;
+}
+
 .intro {
-  text-align: center;
   font-size: 20px;
   margin-bottom: 3vh;
+  text-align: center;
+}
+.explanation {
+  padding: 0% 10%;
+  margin: auto;
+  text-align: center;
+  background-color: #f3f4fa;
+  color: #0d3b47;
 }
 
 .solve-equations-type-methods-holder {
@@ -140,14 +174,11 @@ body {
   text-align: center;
   font-weight: 600;
 }
-.closed-methods-form-holder {
-  width: 90%;
-  max-width: 500px;
+.column-2 {
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin: 5%;
   background-color: #f3f4fa;
   display: flex;
   flex-direction: column;
@@ -193,7 +224,7 @@ body {
   width: 100%;
   max-width: 500px;
 }
-.solutions-title {
+.section-title {
   padding: 10px;
   text-align: center;
   font-weight: 600;
@@ -250,4 +281,20 @@ body {
 }
 .zoom-and-drag {
   width: 100% !important;
+}
+
+@media screen and (max-width: 768px) {
+  .page-columns {
+    flex-direction: column;
+  }
+  .column-1 {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 15%;
+  }
+  .column-2 {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 15%;
+  }
 }
