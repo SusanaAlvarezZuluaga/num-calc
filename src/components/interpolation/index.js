@@ -41,8 +41,8 @@ function Interpolation() {
           <br />
           <div className="requirements">
             <div className="section-title">Requirements</div>
-            In order for num-calc to calulate the root of an equation you need
-            to provide the following information and satisfy the following
+            In order for num-calc to calulate the interpolating polynomial you
+            need to provide the following information and satisfy the following
             conditions:
             <ul className="method-conditions">
               <br />
