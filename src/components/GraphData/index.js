@@ -27,7 +27,7 @@ ChartJS.register(
 function GraphData(props) {
   const { x, y, LagrangePolynomial, NewtonPolynomial, showSolutionNumClicks } =
     props;
-  const [data, setData] = useState(null);
+  const [data, setData] = useState();
   const xmin = Math.min(...x);
   const xmax = Math.max(...x);
   const options = {
