@@ -9,9 +9,11 @@ import {
   LineElement,
   Legend,
   Tooltip,
+  registerables,
 } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
 import { useEffect, useState } from 'react';
+ChartJS.register(...registerables);
 ChartJS.register(
   LinearScale,
   CategoryScale,
@@ -21,7 +23,6 @@ ChartJS.register(
   Legend,
   Tooltip
 );
-
 function GraphData(props) {
   const { x, y, LagrangePolynomial, NewtonPolynomial, showSolutionNumClicks } =
     props;

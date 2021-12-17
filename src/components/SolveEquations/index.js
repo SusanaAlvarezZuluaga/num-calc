@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import Latex from 'react-latex';
 function SolveEquation() {
   return (
     <div className="solve-equations-page">
