@@ -11,9 +11,7 @@ import {
   Tooltip,
 } from 'chart.js';
 import { Chart } from 'react-chartjs-2';
-import { useEffect } from 'react';
-import { useState } from 'react/cjs/react.development';
-
+import { useEffect, useState } from 'react';
 ChartJS.register(
   LinearScale,
   CategoryScale,
