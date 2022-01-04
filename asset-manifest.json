@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/num-calc/static/css/main.0596d6e0.chunk.css",
-    "main.js": "/num-calc/static/js/main.77b9f710.chunk.js",
-    "main.js.map": "/num-calc/static/js/main.77b9f710.chunk.js.map",
+    "main.css": "/num-calc/static/css/main.49131908.chunk.css",
+    "main.js": "/num-calc/static/js/main.c0ab028b.chunk.js",
+    "main.js.map": "/num-calc/static/js/main.c0ab028b.chunk.js.map",
     "runtime-main.js": "/num-calc/static/js/runtime-main.b93a708f.js",
     "runtime-main.js.map": "/num-calc/static/js/runtime-main.b93a708f.js.map",
     "static/js/2.c52a5018.chunk.js": "/num-calc/static/js/2.c52a5018.chunk.js",
     "static/js/2.c52a5018.chunk.js.map": "/num-calc/static/js/2.c52a5018.chunk.js.map",
     "index.html": "/num-calc/index.html",
-    "static/css/main.0596d6e0.chunk.css.map": "/num-calc/static/css/main.0596d6e0.chunk.css.map",
+    "static/css/main.49131908.chunk.css.map": "/num-calc/static/css/main.49131908.chunk.css.map",
     "static/js/2.c52a5018.chunk.js.LICENSE.txt": "/num-calc/static/js/2.c52a5018.chunk.js.LICENSE.txt",
-    "static/media/example_matrix_system_of_equations.402cac28.png": "/num-calc/static/media/example_matrix_system_of_equations.402cac28.png",
-    "static/media/example_system_of_equations.ca664204.png": "/num-calc/static/media/example_system_of_equations.ca664204.png",
+    "static/media/example_matrix_system_of_equations.b3da7f2a.png": "/num-calc/static/media/example_matrix_system_of_equations.b3da7f2a.png",
+    "static/media/example_system_of_equations.f0dc9967.png": "/num-calc/static/media/example_system_of_equations.f0dc9967.png",
     "static/media/interpolation.e377e878.png": "/num-calc/static/media/interpolation.e377e878.png",
     "static/media/logo.4fcc7157.png": "/num-calc/static/media/logo.4fcc7157.png",
     "static/media/name.d7824bc4.png": "/num-calc/static/media/name.d7824bc4.png",
@@ -20,7 +20,7 @@
   "entrypoints": [
     "static/js/runtime-main.b93a708f.js",
     "static/js/2.c52a5018.chunk.js",
-    "static/css/main.0596d6e0.chunk.css",
-    "static/js/main.77b9f710.chunk.js"
+    "static/css/main.49131908.chunk.css",
+    "static/js/main.c0ab028b.chunk.js"
   ]
 }
