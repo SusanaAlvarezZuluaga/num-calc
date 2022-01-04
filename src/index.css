@@ -281,11 +281,15 @@ body {
   width: 100% !important;
 }
 .example-sys-eq-holder {
-  height: 35px;
+  max-height: 100px;
+  width: 90%;
   display: flex;
   justify-content: center;
   margin-top: 1vh;
   margin-bottom: 1vh;
+}
+.example-sys-eq {
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {

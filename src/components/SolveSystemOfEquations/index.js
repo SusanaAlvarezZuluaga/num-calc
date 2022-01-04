@@ -39,7 +39,7 @@ function SolveSystemsOfEquations() {
             satisfy every equation in the system. A system of linear equations
             can be represented using matrices in the following way:
             <div className="example-sys-eq-holder">
-              <img src={axb} alt="matrix" />
+              <img className="example-sys-eq" src={axb} alt="matrix" />
             </div>
             Where A is the coefficient matrix, X is the variable matrix, and a b
             is the constant matrix. Lets see and example. Supose you have the
